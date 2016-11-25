@@ -88,7 +88,7 @@
         <![endif]-->
     </head>
 
-    <body>
+    <body class="ic-login-body">
 
     <!-- header -->
     <header class="header header-default">
@@ -105,7 +105,7 @@
     </header>
 
     <!-- page content -->
-    <div class="container-fluid body-wrapper"ss );>
+    <div class="container-fluid body-wrapper" );>
 
         <div class="row">
             <div class="col-md-12">
@@ -113,10 +113,15 @@
                 <!-- content -->
                 <div class="container col-xs-10 col-sm-6 col-md-6 col-lg-3 col-centered wr-content wr-login col-centered">
                     <div>
-                        <h2 class="wr-title uppercase blue-bg padding-double white boarder-bottom-blue margin-none">Sign
-                            in </h2>
+
+                        <div class="ic-Login-header">
+                            <div>
+                                <img style="width: 100%" alt="Canvas by Instructure"
+                                     src="https://instructure-uploads.s3.amazonaws.com/account_46480000000000001/attachments/14035/ilumno-logo_white.png?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&amp;Expires=1927729120&amp;Signature=Ji0HX60GRXrqCro4eVgfHq7yKHQ%3D&amp;response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&amp;response-expires=473364000" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="boarder-all ">
+                    <div class="boarder-all " style="margin-top: 30px">
                         <div class="clearfix"></div>
                         <div class="padding-double login-form">
                             <%

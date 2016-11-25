@@ -3,6 +3,25 @@ body {
     font-family: 'Roboto Light', Arial, Helvetica, sans-serif;
     font-weight: 300;
 }
+
+body.ic-Login-Body {
+    background-color:#000;
+    background-image:linear-gradient(transparent, transparent 80%, #ececec),url("https://instructure-uploads.s3.amazonaws.com/account_46480000000000001/attachments/45152/fondo_ilumno.jpg?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&Expires=1930144262&Signature=21BK9xKnmynAp3AqGELExhqVmGk%3D&response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&response-expires=473364000");
+    background-size:cover;
+    background-attachment:fixed;
+    height:100vh
+}
+
+.ic-Login-header {
+    padding:0 18px;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-justify-content:center;
+    justify-content:center;
+    -webkit-align-items:center;
+    align-items:center
+}
+
 header {
     background: #222222;
     min-height: 50px;
