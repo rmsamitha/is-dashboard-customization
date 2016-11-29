@@ -1,5 +1,12 @@
 function drawPage() {
     console.log(json);
+    //var log = new Log();
+   // log.info(json);
+
+    //alert(JSON.stringify(json,null,2));
+
+
+    /*
     var output = "";
     var u2fScript="<script src=\"u2f-api.js\"></script>";
     var start = "<div class=\"container-fluid\" style=\"width:95%\">\n" +
@@ -88,7 +95,7 @@ function drawPage() {
     var endString ="<tr>\n" +
         "               <td colspan=\"2\">" +
         "                   <div style=\"margin: auto;\">" +
-        "                    <button id=\"connectFedBtn\" class=\"btn btn-primary mgL14px\" onclick=\"drawFIDORegistration(this);\" type=\"button\" >Manage U2F Authentication</button>" +
+        "                    <button id=\"connectFedBtn\" class=\"btn btn-primary mgL14px\" onclick=\"drawFIDORegistration(this);\" type=\"button\" >Manage U2F fffffffff Authentication</button>" +
         "                    </td></div></tr>"+
         "<tr><td colspan=\"2\">" +
         "                        <input type=\"button\" onclick=\"validate();\" class=\"btn btn-primary\" value=\"Update\"/>\n" +
@@ -99,9 +106,35 @@ function drawPage() {
         "        </div>\n" +
         "        </div>\n" +
         "    </div>";
+*/
+//output =  u2fScript + start + body + endString;
 
+    var userTenant = userName.substring(userName.lastIndexOf("@")+1);
+    var bannerUrl = "https://abc.banner."+userTenant;
+    var microsoftDynamicsUrl = "https://abc.dynamics."+userTenant;
+    var canvasUrl = "https://abc.canvas."+userTenant;
 
-    output =  u2fScript + start + body + endString;
+    alert(userTenant);
+
+    //if(userName)
+    var topContent = "<div>\n" +
+                        "<ul style='text-align: left'>" +
+                            "<li>"+
+                                "<a href='"+bannerUrl+"' target='_blank'>Banner</a>" +
+                            "</li>" +
+
+                            "<li>"+
+                            "<a href='"+microsoftDynamicsUrl+"' target='_blank'>Microsoft Dynamics</a>" +
+                            "</li>" +
+
+                            "<li>"+
+                            "<a href='"+canvasUrl+"' target='_blank'>Canvas</a>" +
+                            "</li>" +
+
+                        "</ul>" +
+                     "</div>";
+    output = topContent;
+
     $("#gadgetBody").empty();
     $("#gadgetBody").append(output);
 }
@@ -109,7 +142,7 @@ function drawPage() {
 function cancel() {
     gadgets.Hub.publish('org.wso2.is.dashboard', {
         msg:'A message from User profile',
-        id:"user_profile  .shrink-widget"
+        id:"applications  .shrink-widget"
     });
 
 }
@@ -187,9 +220,9 @@ function validateEmpty(fldname) {
     return error;
 }
 
-function reloadGrid() {
+/*function reloadGrid() {
     $.ajax({
-        url: "/portal/gadgets/user_profile/index.jag",
+        url: "/portal/gadgets/applications/index.jag",
         type: "GET",
         data: "&cookie=" + cookie + "&user=" + userName,
         success: function (data) {
@@ -203,47 +236,15 @@ function reloadGrid() {
             }});
         }
     });
-}
+}*/
 
-function deleteFIDOToken(deviceRemarks){
 
-    var msg = "You are about to remove Id '" + username + "' From IDP '" + idPId + "'. Do you want to proceed?";
-    message({content: msg, type: 'confirm', okCallback: function () {
-        $.ajax({
-            url: "/portal/gadgets/connected_accounts/index.jag",
-            type: "POST",
-            data: "&cookie=" + cookie + "&username=" + username + "&idPId=" + idPId + "&action=fedDelete",
-            success: function (data) {
-                var resp = $.parseJSON(data);
-                if (resp.success == true) {
-                    reloadFedGrid();
-                } else {
-                    if (typeof resp.reLogin != 'undefined' && resp.reLogin == true) {
-                        window.top.location.href = window.location.protocol + '//' + serverUrl + '/dashboard/logout.jag';
-                    } else {
-                        if (resp.message != null && resp.message.length > 0) {
-                            message({content: resp.message, type: 'error', cbk: function () {
-                            }});
-                        } else {
-                            message({content: 'Error occurred while deleting user account.', type: 'error', cbk: function () {
-                            }});
-                        }
-                    }
-                }
-            },
-            error: function (e) {
-                message({content: 'Error occurred while deleting user account.', type: 'error', cbk: function () {
-                }});
-            }
-        });
-    }, cancelCallback: function () {
-    }});
-}
+/*
 
 function drawFIDORegistration() {
 
     $.ajax({
-        url: "/portal/gadgets/user_profile/controllers/my-profile/fido-metadata.jag",
+        url: "/portal/gadgets/applications/controllers/my-applications/fido-metadata.jag",
         type: "GET",
         data: "&cookie=" + cookie + "&action=idPList",
         success: function (data) {
@@ -330,6 +331,7 @@ function drawFIDORegistration() {
         }
     });
 }
+*/
 
 function isArray(element) {
     return Object.prototype.toString.call(element) === '[object Array]';

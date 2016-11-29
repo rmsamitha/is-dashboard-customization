@@ -6,7 +6,7 @@ var log = new Log();
 
 function call(webService, serverUrl, options, payload){
     var cookie = session.get("auth-cookie");
-    var userName = session.get("user");
+   // var userName = session.get("user");
     var pwd = session.get("pwd");
 
     log.debug(cookie);

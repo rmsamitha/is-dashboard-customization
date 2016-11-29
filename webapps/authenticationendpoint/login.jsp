@@ -105,7 +105,7 @@
     </header>
 
     <!-- page content -->
-    <div class="container-fluid body-wrapper" );>
+    <div class="container-fluid body-wrapper">
 
         <div class="row">
             <div class="col-md-12">

@@ -95,6 +95,6 @@
         "url":"/portal/gadgets/applications/gadget.xml",
         "permissions":["/permission/admin/login"],
         "authorized":"true",
-        "id" : "user_applications"
+        "id" : "applications"
     }
 ]}

@@ -1,4 +1,5 @@
 <%
+/*
 var log = new Log();
 var cryptoUtil = Packages.org.wso2.carbon.core.util.CryptoUtil;
 
@@ -13,10 +14,10 @@ session.put('auth-cookie', cookie);
 
  try{
 
-var profileClient = require('controllers/my-profile/profileClient.jag');
-var fidoClient = require('controllers/my-profile/fido-check.jag'); 
+//var profileClient = require('controllers/my-applications/profileClient.jag');
+var fidoClient = require('controllers/my-applications/fido-check.jag');
 var fieldValues = profileClient.getUserProfile(user, 'default');
-var isEnabled = fidoClient.isDeviceRegistered();
+//var isEnabled = fidoClient.isDeviceRegistered();
 fieldValues.return.fidoEnabled = isEnabled.return;
 
 print( fieldValues );
@@ -26,5 +27,5 @@ print(e);
             }
 
 }
-
+*/
 %>
