@@ -129,6 +129,8 @@ function drawPage() {
                             "</li>" +
 
                         "</ul>" +
+                        "<h2>test h2 heading</h2>"+
+                        "<h1>test   h1   heading</h1>"+
                      "</div>";
     output = topContent;
 
