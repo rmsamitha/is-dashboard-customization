@@ -121,6 +121,11 @@ div.icon-marketing-styles {
 div.icon-user-dashboard{
     background: #6babde;
 }
+
+div.icon-apps-dashboard{
+    background: #aa1111;
+}
+
 div.icon-rotate-left-dashboard{
     background: #6bab1e;
     border: 1px solid #2a6e14;

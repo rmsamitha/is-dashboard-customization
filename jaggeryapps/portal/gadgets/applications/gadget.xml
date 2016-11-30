@@ -37,7 +37,7 @@
         });
     </script>
 
-    <div class='icon-user icon-user-dashboard icon-marketing-styles'></div>
+    <div class='icon-list icon-apps-dashboard icon-marketing-styles'></div>
     Applications accessible to you.
     <p><a class='btn btn-default max_view' href=''>View details</a></p>
     ]]>
