@@ -332,8 +332,8 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
 </li>
 
-<li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="2"
-    data-url="<%=httpsCoreUrl%>/portal/gadgets/user_profile/gadget.xml" data-wid="39" data-prefs="{}"
+<li class="layout_block " data-sizey="1" data-sizex="2" data-col="1" data-row="2"
+    data-url="<%=httpsCoreUrl%>/portal/gadgets/user_profile/gadget.xml" data-wid="44" data-prefs="{}"
     data-title="User Profiles">
     <div class="grid_header">
         <h3></h3>
@@ -354,7 +354,7 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
 </li>
 
-<li class="layout_block " data-sizey="1" data-sizex="2" data-col="3" data-row="2"
+<!--li class="layout_block " data-sizey="1" data-sizex="2" data-col="3" data-row="2"
     data-url="<%=httpsCoreUrl%>/portal/gadgets/user_auth_apps/gadget.xml" data-wid="40" data-prefs="{}"
     data-title="Authorized Apps">
     <div class="grid_header">
@@ -374,9 +374,9 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
     </div>
 
-</li>
+</li-->
 
-<li class="layout_block " data-sizey="1" data-sizex="2" data-col="1" data-row="3"
+<!--li class="layout_block " data-sizey="1" data-sizex="2" data-col="1" data-row="3"
     data-url="<%=httpsCoreUrl%>/portal/gadgets/account-recovery/gadget.xml" data-wid="41" data-prefs="{}"
     data-title="Account Recovery">
     <div class="grid_header">
@@ -396,10 +396,10 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
     </div>
 
-</li>
+</li-->
 
-<li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="4"
-    data-url="<%=httpsCoreUrl%>/portal/gadgets/applications/gadget.xml" data-wid="41" data-prefs="{}"
+<li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="2"
+    data-url="<%=httpsCoreUrl%>/portal/gadgets/applications/gadget.xml" data-wid="46" data-prefs="{}"
     data-title="Applications">
     <div class="grid_header">
         <h3></h3>
@@ -420,7 +420,7 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
 </li>
 
-<li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="3"
+<!--li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="3"
     data-url="<%=httpsCoreUrl%>/portal/gadgets/connected_accounts/gadget.xml" data-wid="42" data-prefs="{}"
     data-title="Manage Associated User Accounts & Federated IDs">
     <div class="grid_header">
@@ -434,7 +434,7 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
     </div>
     <div class="gadget-pref-cont"></div>
     <div class="add-gadget-item"></div>
-</li>
+</li-->
 
 <!--<li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="3"-->
     <!--data-url="<%=httpsCoreUrl%>/portal/gadgets/identity_management/gadget.xml" data-wid="42" data-prefs="{}"-->
@@ -459,8 +459,8 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
 <!--</li>-->
 
-<li class="layout_block " data-sizey="1" data-sizex="2" data-col="3" data-row="3"
-    data-url="<%=httpsCoreUrl%>/portal/gadgets/pwd_change/gadget.xml" data-wid="43" data-prefs="{}"
+<li class="layout_block " data-sizey="1" data-sizex="2" data-col="3" data-row="2"
+    data-url="<%=httpsCoreUrl%>/portal/gadgets/pwd_change/gadget.xml" data-wid="45" data-prefs="{}"
     data-title="Change Password">
     <div class="grid_header">
         <h3></h3>
@@ -483,7 +483,7 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
 </li>
 
-<li id ="sample4" class="layout_block " data-sizey="1" data-sizex="2" data-col="1" data-row="2"
+<!--li id ="sample4" class="layout_block " data-sizey="1" data-sizex="2" data-col="1" data-row="2"
     data-url="<%=httpsCoreUrl%>/portal/gadgets/scim_providers/gadget.xml" data-wid="44" data-prefs="{}"
     data-title="SCIM Providers">
     <div class="grid_header">
@@ -505,9 +505,9 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
     </div>
 
 
-</li>
+</li-->
 
-<li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="2"
+<!--li class="layout_block " data-sizey="1" data-sizex="2" data-col="5" data-row="2"
     data-url="<%=httpsCoreUrl%>/portal/gadgets/approvals/gadget.xml" data-wid="45" data-prefs="{}"
     data-title="New Topic">
     <div class="grid_header">
@@ -527,7 +527,7 @@ if (proxyContextPath === 'null' || proxyContextPath == null || proxyContextPath.
 
     </div>
 
-</li>
+</li-->
 
 <!--
 <li class="layout_block " data-sizey="1" data-sizex="2" data-col="0" data-row="0"
