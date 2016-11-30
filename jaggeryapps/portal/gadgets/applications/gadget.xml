@@ -68,6 +68,27 @@
     <link rel="stylesheet" type="text/css" href="js/ui/css/dialog.css">
     <link rel="stylesheet" type="text/css" href="js/ui/css/smoothness/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" type="text/css" href="js/ui/css/smoothness/jqueryui-themeroller.css">
+    <script type="text/javascript">
+    var userName;
+       /*
+        $(function WindowLoad(event) {
+                alert("ffffffffffffff");
+                var obj = $.parseJSON(event.data);
+               // cookie = obj.cookie;
+                userName = obj.user;
+
+        }
+
+        alert(userName);
+        var link = document.createElement('link');
+
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css1.css';
+
+        document.head.appendChild(link); */
+    </script>
+    <!--link rel="stylesheet" type="text/css" href="js/ui/css/uva/test.css"-->
 
     <script>
         var headID = document.getElementsByTagName("head")[0];
@@ -117,12 +138,24 @@
                                 console.log('completed');
                             });
                 }
+
+                //add relevant css style sheets
+                var userTenant = userName.substring(userName.lastIndexOf("@") + 1);
+                loadRelevantCSS(userTenant);
             };
             ws.onclose = function () {
                 console.log("web Socket onclose. ");
             };
         });
 
+        function loadRelevantCSS(userTenant) {
+                var headID = document.getElementsByTagName("head")[0];
+                var cssNode = document.createElement('link');
+                cssNode.type = 'text/css';
+                cssNode.rel = 'stylesheet';
+                cssNode.href = PROXY_CONTEXT_PATH + '/portal/gadgets/applications/js/ui/css/'+userTenant+'/test.css';
+                headID.appendChild(cssNode);
+        }
 
         //fido client code
         var request;

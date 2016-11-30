@@ -109,14 +109,11 @@ function drawPage() {
 */
 //output =  u2fScript + start + body + endString;
 
-    var userTenant = userName.substring(userName.lastIndexOf("@")+1);
+    var userTenant = userName.substring(userName.lastIndexOf("@") + 1);
     var bannerUrl = "https://abc.banner."+userTenant;
     var microsoftDynamicsUrl = "https://abc.dynamics."+userTenant;
     var canvasUrl = "https://abc.canvas."+userTenant;
 
-    alert(userTenant);
-
-    //if(userName)
     var topContent = "<div>\n" +
                         "<ul style='text-align: left'>" +
                             "<li>"+
