@@ -119,11 +119,11 @@
                                 var appUrlsJson =null;
 
                                 fetchAppUrlConfigFile(path2, function(data){
-                                    alert(JSON.parse(data));
+                                    //alert(JSON.parse(data));
                                     appUrlsJson = data;//JSON.parse(data);
                                     //allCSSLoaded = true;
                                 });
-                                alert("aaaaaa"+appUrlsJson);
+                                alert("aaaaaakkk "+appUrlsJson);
                                 drawPage(appUrlsJson);
                                 //drawPage();
 
@@ -137,85 +137,25 @@
                             });
                 }
 
-                //add relevant css style sheets
-                userTenant = userName.substring(userName.lastIndexOf("@") + 1);
-
-                var path = PROXY_CONTEXT_PATH + "/portal/gadgets/applications/js/ui/css/" + userTenant + "/css_files.txt";
-                var allCSSLoaded = false;
-                fetchCSSfileListFile(path, function(data){
-                    //alert(data);
-                    var cssFiles = data.split(',');
-                    //alert(cssFiles);
-                    cssFiles.forEach(
-                        function(fileName) {
-                            loadRelevantCSS(fileName);
-                        }
-                    );
-                    allCSSLoaded = true;
-                });
-
-                wait();
-                function wait(){
-                  if (!allCSSLoaded){
-                    //alert("in loop");
-                    setTimeout(wait,100)
-
-                  }else{
-                      //alert("in loop exiting...");
-                  }
-                }
-                //alert("exiting script..");
-
-
-
-
-
             };
             ws.onclose = function () {
                 console.log("web Socket onclose. ");
             };
         });
 
-        function loadRelevantCSS(fileName) {
-                var headID = document.getElementsByTagName("head")[0];
-                var cssNode = document.createElement('link');
-                cssNode.type = 'text/css';
-                cssNode.rel = 'stylesheet';
-                cssNode.href = PROXY_CONTEXT_PATH + '/portal/gadgets/applications/js/ui/css/'+userTenant+"/"+fileName;
-                headID.appendChild(cssNode);
-                //alert("loaded css :"+fileName);
-        }
-
         //fido client code
         var request;
         var loggedInUser;
 
-        function fetchCSSfileListFile(path, callback) {
-            alert("css file path:"+path);
-            var httpRequest = new XMLHttpRequest();
-            httpRequest.onreadystatechange = function() {
-                if (httpRequest.readyState === 4) {
-                    if (httpRequest.status === 200) {
-                        var data = httpRequest.responseText;
-                        //var data = JSON.parse(httpRequest.responseText);
-
-                        if (callback) callback(data);
-                    }
-                }
-            };
-            httpRequest.open('GET', path);
-            httpRequest.send();
-        }
-
         function fetchAppUrlConfigFile(path2, callback) {
-            alert("in fetchAppUrlConfigFile function - path:" + path2);
+            //alert("in fetchAppUrlConfigFile function - path:" + path2);
             var httpRequest = new XMLHttpRequest();
             httpRequest.onreadystatechange = function() {
                 if (httpRequest.readyState === 4) {
                     if (httpRequest.status === 200) {
                         var data = httpRequest.responseText;
                         //var data = JSON.parse(httpRequest.responseText);
-                        alert("ddd:"+httpRequest.responseText+":fff:"+data);
+                        //alert("ddd:"+httpRequest.responseText+":fff:"+data);
                         if (callback) callback(data);
                     }
                 }
