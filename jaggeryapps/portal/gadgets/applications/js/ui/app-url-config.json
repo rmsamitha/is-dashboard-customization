@@ -1,0 +1,12 @@
+{
+  "external_user": {
+    "banner": "https://iam-qa.ilumno.com/external/banner",
+    "dynamics": "https://iam-qa.ilumno.com/external/dynamics",
+    "canvas": "https://iam-qa.ilumno.com/external/canvas"
+  },
+  "internal_user": {
+    "banner": "https://iam-qa.ilumno.com/external/banner",
+    "dynamics": "https://iam-qa.ilumno.com/external/dynamics",
+    "canvas": "https://iam-qa.ilumno.com/external/canvas"
+  }
+}

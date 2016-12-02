@@ -1,4 +1,5 @@
-function drawPage() {
+function drawPage(appUrlsJson) {
+    alert("in draw page:"+appUrlsJson);
     console.log(json);
     //var log = new Log();
    // log.info(json);
@@ -131,12 +132,24 @@ function drawPage() {
                         "</ul>" +
                         "<h2>test h2 heading</h2>"+
                         "<h1>test   h1   heading</h1>"+
+
+
+                       // "<a href='#' onclick='runNotepad(); return false;'>Run Notepad</a>"
                      "</div>";
     output = topContent;
 
     $("#gadgetBody").empty();
     $("#gadgetBody").append(output);
 }
+
+/*
+function runNotepad() {
+    alert("TTTT");
+    var Shell = new ActiveXObject("WScript.Shell");
+    Shell.Run("C:\\Windows\\System32\\notepad.exe");
+}
+*/
+
 
 function cancel() {
     gadgets.Hub.publish('org.wso2.is.dashboard', {

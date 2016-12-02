@@ -25,6 +25,7 @@
         cssNode.rel = 'stylesheet';
         cssNode.href = PROXY_CONTEXT_PATH + '/portal/gadgets/applications/js/ui/font-awesome/css/font-awesome.min.css';
         headID.appendChild(cssNode);
+        //load other css files
     </script>
     <script>
         $(function () {
@@ -112,7 +113,19 @@
                     })
                             .done(function (data) {
                                 json = $.parseJSON(data);
-                                drawPage();
+
+                                //load application specific urls from a file
+                                var path2 = PROXY_CONTEXT_PATH + "/portal/gadgets/applications/js/ui/app-url-config.json";
+                                var appUrlsJson =null;
+
+                                fetchAppUrlConfigFile(path2, function(data){
+                                    alert(JSON.parse(data));
+                                    appUrlsJson = data;//JSON.parse(data);
+                                    //allCSSLoaded = true;
+                                });
+                                alert("aaaaaa"+appUrlsJson);
+                                drawPage(appUrlsJson);
+                                //drawPage();
 
                             })
                             .fail(function () {
@@ -127,8 +140,7 @@
                 //add relevant css style sheets
                 userTenant = userName.substring(userName.lastIndexOf("@") + 1);
 
-                var path=PROXY_CONTEXT_PATH+"/portal/gadgets/applications/js/ui/css/"+userTenant+"/css_files.txt";
-
+                var path = PROXY_CONTEXT_PATH + "/portal/gadgets/applications/js/ui/css/" + userTenant + "/css_files.txt";
                 var allCSSLoaded = false;
                 fetchCSSfileListFile(path, function(data){
                     //alert(data);
@@ -153,6 +165,11 @@
                   }
                 }
                 //alert("exiting script..");
+
+
+
+
+
             };
             ws.onclose = function () {
                 console.log("web Socket onclose. ");
@@ -173,8 +190,8 @@
         var request;
         var loggedInUser;
 
-
         function fetchCSSfileListFile(path, callback) {
+            alert("css file path:"+path);
             var httpRequest = new XMLHttpRequest();
             httpRequest.onreadystatechange = function() {
                 if (httpRequest.readyState === 4) {
@@ -187,6 +204,23 @@
                 }
             };
             httpRequest.open('GET', path);
+            httpRequest.send();
+        }
+
+        function fetchAppUrlConfigFile(path2, callback) {
+            alert("in fetchAppUrlConfigFile function - path:" + path2);
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === 4) {
+                    if (httpRequest.status === 200) {
+                        var data = httpRequest.responseText;
+                        //var data = JSON.parse(httpRequest.responseText);
+                        alert("ddd:"+httpRequest.responseText+":fff:"+data);
+                        if (callback) callback(data);
+                    }
+                }
+            };
+            httpRequest.open('GET', path2);
             httpRequest.send();
         }
 
