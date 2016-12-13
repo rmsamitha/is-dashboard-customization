@@ -117,16 +117,20 @@
                                 //load application specific urls from a file
                                 var path2 = PROXY_CONTEXT_PATH + "/portal/gadgets/applications/js/ui/app-url-config.json";
                                 var appUrlsJson =null;
-
+                                var fileLoaded=false;
                                 fetchAppUrlConfigFile(path2, function(data){
-                                    //alert(JSON.parse(data));
                                     appUrlsJson = data;//JSON.parse(data);
-                                    //allCSSLoaded = true;
+                                    fileLoaded = true;
                                 });
-                                alert("aaaaaakkk "+appUrlsJson);
-                                drawPage(appUrlsJson);
-                                //drawPage();
 
+                                wait();
+                                function wait(){
+                                    if (!fileLoaded){
+                                       setTimeout(wait,100)
+                                    }else{
+                                      drawPage(appUrlsJson);
+                                  }
+                                }
                             })
                             .fail(function () {
                                 console.log('error');

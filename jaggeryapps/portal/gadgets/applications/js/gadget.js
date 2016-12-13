@@ -1,13 +1,15 @@
-function drawPage(appUrlsJson) {
-    alert("in draw page:"+appUrlsJson);
+function drawPage(appUrls) {
+    //alert("came to drawpage func:"+appUrls);
+    var json = JSON.parse(appUrls);
+    //alert("banner link:"+json.external_user.banner);
     console.log(json);
 
-    var userTenant = userName.substring(userName.lastIndexOf("@") + 1);
-    var bannerUrl = "https://abc.banner."+userTenant;
-    var microsoftDynamicsUrl = "https://abc.dynamics."+userTenant;
-    var canvasUrl = "https://abc.canvas."+userTenant;
+    //var userTenant = userName.substring(userName.lastIndexOf("@") + 1);
+    var bannerUrl = json.external_user.banner;
+    var microsoftDynamicsUrl = json.external_user.dynamics;
+    var canvasUrl = json.external_user.canvas;
 
-    var topContent = "<div>\n" +
+    var topContent = "<div>" +
                         "<ul style='text-align: left'>" +
                             "<li>"+
                                 "<a href='"+bannerUrl+"' target='_blank'>Banner</a>" +
@@ -22,7 +24,6 @@ function drawPage(appUrlsJson) {
                             "</li>" +
 
                         "</ul>"
-
                      "</div>";
     output = topContent;
 
